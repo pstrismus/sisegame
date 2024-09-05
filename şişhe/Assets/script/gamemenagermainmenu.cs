@@ -15,9 +15,9 @@ public class gamemenagermainmenu : MonoBehaviour
     }
     public void StartButton()
     {
-        string input = "   "; // Kontrol etmek istediðiniz string
+        string input = "   "; // Kontrol etmek istediï¿½iniz string
 
-        // String sadece boþluklardan oluþuyorsa ya da tamamen boþsa
+        // String sadece boï¿½luklardan oluï¿½uyorsa ya da tamamen boï¿½sa
         if (string.IsNullOrWhiteSpace(player1Input.text.Trim()))
         {
             player1Bos.SetActive(true);
