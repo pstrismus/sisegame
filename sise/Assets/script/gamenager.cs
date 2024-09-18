@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +19,10 @@ public class gamenager : MonoBehaviour
     public GameObject kazanan;
     [SerializeField]TextMeshProUGUI player1GUI;
     [SerializeField]TextMeshProUGUI player2GUI;
+
+    public AIbot Bot = AIbot.instance;
+    public bool BotActive;
+
     private void Awake()
     {
         if (instance == null)
@@ -28,6 +32,7 @@ public class gamenager : MonoBehaviour
     }
     private void Start()
     {
+        BotActive = (PlayerPrefs.GetInt("BotActive") == 1) ? true : false;
         player1 = GameObject.FindGameObjectWithTag("player1");
         player2 = GameObject.FindGameObjectWithTag("player2");
         rafObjects = GameObject.FindGameObjectsWithTag("raf");
@@ -38,13 +43,18 @@ public class gamenager : MonoBehaviour
 
     public void setPlayer()
     {
-        if (mevcutPlayer == player1)
+        if (mevcutPlayer == player1&&buttonclick.instance.sayıı>1)
         {
             mevcutPlayer.SetActive(false);
             mevcutPlayer = player2;
             mevcutPlayer.SetActive(true);
+            if (BotActive)
+            {
+                StartCoroutine(Timer());
+            }
+
         }
-        else
+        else if(mevcutPlayer == player2 && buttonclick.instance.sayıı > 1)
         {
             mevcutPlayer.SetActive(false);
             mevcutPlayer = player1;
@@ -53,7 +63,7 @@ public class gamenager : MonoBehaviour
     }
     public void control()
     {
-        if (buttonclick.instance.say�� == 0)
+        if (buttonclick.instance.sayıı == 0)
         {
             if (mevcutPlayer == player1)
             {
@@ -64,19 +74,10 @@ public class gamenager : MonoBehaviour
                 Debug.Log("player kaybetti");
             }
         }
-        if (buttonclick.instance.say�� == 1 && buttonclick.instance.isdelete == false)
+        if (buttonclick.instance.sayıı == 1 && buttonclick.instance.isdelete == false)
         {
             DeleteObjectsWithTag("sise");
-            if (mevcutPlayer == player1)
-            {
-                kazanan = player2;
-                Debug.Log("player1 kaybetti");
-            }
-            else
-            {
-                kazanan = player1;
-                Debug.Log("player kaybetti");
-            }
+            kazanan = (mevcutPlayer == player1) ? player2 : player1;
         }
     }
     public void DeleteObjectsWithTag(string tag)
@@ -93,7 +94,7 @@ public class gamenager : MonoBehaviour
     public void player()
     {
         control();
-        if (buttonclick.instance.say�� == 0|| buttonclick.instance.say�� == 1)
+        if (buttonclick.instance.sayıı == 0|| buttonclick.instance.sayıı == 1)
         {
             if (kazanan == null)
             {
@@ -115,4 +116,10 @@ public class gamenager : MonoBehaviour
         player1GUI.text =PlayerPrefs.GetString("Player1");
         player2GUI.text =PlayerPrefs.GetString("Player2");
     }
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(1f);
+        Bot.BotMove();
+    }
+
 }

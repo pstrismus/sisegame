@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -66,9 +67,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -1200,7 +1198,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8b13aa76dbaf8d946aff46759ee93e18, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b77e376d0b6dca46a478314b9e517b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2063,7 +2061,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -6238,6 +6236,8 @@ MonoBehaviour:
   kazanan: {fileID: 0}
   player1GUI: {fileID: 1688293907}
   player2GUI: {fileID: 596863583}
+  Bot: {fileID: 1944326868}
+  BotActive: 0
 --- !u!114 &1944326868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6247,10 +6247,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944326865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03aa514bafd70524abf5e2f5677594bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 210630ecc1ba072419771346629694da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 8300000, guid: d551ce1802504384eb815890d15ac45b, type: 3}
+  CurrentDifficulty: 0
+  rows: []
 --- !u!4 &1993760248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5063930589414039119, guid: aff8b3b830fb2b44f9ab332443d7b424, type: 3}
