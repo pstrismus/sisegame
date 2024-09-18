@@ -1,0 +1,5 @@
+C:/Users/mert efe/Desktop/sisegame/sise/.utmp/RelWithDebInfo/2v5d2z6p/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/mert efe/Desktop/sisegame/sise/.utmp/RelWithDebInfo/2v5d2z6p/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/mert efe/Desktop/sisegame/sise/.utmp/RelWithDebInfo/2v5d2z6p/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/mert efe/Desktop/sisegame/sise/.utmp/RelWithDebInfo/2v5d2z6p/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/mert efe/Desktop/sisegame/sise/.utmp/RelWithDebInfo/2v5d2z6p/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

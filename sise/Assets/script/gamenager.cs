@@ -65,19 +65,12 @@ public class gamenager : MonoBehaviour
     {
         if (buttonclick.instance.sayıı == 0)
         {
-            if (mevcutPlayer == player1)
-            {
-                Debug.Log("player1 kaybetti");
-            }
-            else
-            {
-                Debug.Log("player kaybetti");
-            }
+            kazanan = (mevcutPlayer == player1) ? player2 : player1;
         }
         if (buttonclick.instance.sayıı == 1 && buttonclick.instance.isdelete == false)
         {
             DeleteObjectsWithTag("sise");
-            kazanan = (mevcutPlayer == player1) ? player2 : player1;
+            kazanan = (mevcutPlayer == player1) ? player1 : player2;
         }
     }
     public void DeleteObjectsWithTag(string tag)
